@@ -104,3 +104,11 @@ h1, h2, h3 {
     background-color: var(--primary-color);
     color: var(--font-color-high-opacity-on-primary);
 }
+
+.text-EN {
+    transition: all 0.3s ease-out;
+}
+
+.step-guide-div {
+    font-size: 1.2rem;
+}

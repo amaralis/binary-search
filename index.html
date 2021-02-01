@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/generic.css" type="text/css">
+    <link rel="stylesheet" href="./styles/styles.css" type="text/css">
+    <link rel="stylesheet" href="./styles/collapse.css" type="text/css">
+    <link rel="stylesheet" href="./styles/demo.css" type="text/css">
+    <script defer src="./scripts/main.js" type="module"></script>
+    <title>Binary Search</title>
+</head>
+<body>
+    <header>
+        <button class="toggleBtn btn" type="button" id="toggleEN-PT" data-active=true>&#x1F1F5&#x1F1F9&emsp;Português</button>
+        <button class="toggleBtn btn" hidden type="button" id="togglePT-EN" data-active=false>&#x1F1EC&#x1F1E7&emsp;English</button>
+    </header>
+    <main>
+        <section id="sidebar">
+            <article class="main-container">
+                <h1>
+                    <span class="text-EN">
+                        BINARY SEARCH
+                    </span>
+                    <span hidden class="text-PT">
+                        BUSCA BINÁRIA
+                    </span>
+                </h1>
+                <h2>
+                    <span class="text-EN">
+                        <u>Time Complexity</u>
+                    </span>
+                    <span hidden class="text-PT">
+                        <u>Complexidade de Tempo</u>
+                    </span>
+                </h2>
+                <div class="collapse">
+                    <p>
+                        <span class="text-EN">
+                            A binary search can only be made in a sorted array. It is a very efficient search algorithm
+                            which consists of truncating the array in half every time an element is checked
+                            against the searched element to see if they match.
+                        </span>
+                        <span hidden class="text-PT">
+                            Uma busca binária só pode ser feita numa lista ordenada. É um algoritmo de busca muito eficiente que consiste em dividir a lista a meio de cada vez que um elemento
+                            é comparado com o elemento que procuramos, para ver se coincidem.
+                        </span>
+                    </p>
+                    <p>
+                        <span class="text-EN">
+                            This means that, in mathematical
+                            terms, this search is conducted in <strong><em>log<sub>2</sub>(n)</em></strong> time,
+                            or <strong><em>O(log<sub>2</sub>(n))</em></strong> time, in what's known as <em>Big-O notation</em>.
+                            This notation is used to express how efficient an algorithm is. It can relate to time, or space efficiency,
+                            but here we're only going to talk about time. And in the case of binary searches, only logarithmic time.
+                        </span>
+                        <span hidden class="text-PT">
+                            Isto significa que, em termos matemáticos, esta busca é levada a cabo em tempo <strong><em>log<sub>2</sub>(n)</em></strong>, ou tempo
+                            <strong><em>O(log<sub>2</sub>(n))</em></strong>, nesta notação conhecida como <em>notação O-grande</em>.
+                            Esta notação é usada para exprimir quão eficiente é um algoritmo. Pode referir-se a eficiência de tempo
+                            ou de espaço, mas aqui vamos falar apenas de tempo. No caso de buscas binárias, de tempo logarítmico.
+                        </span>
+                    </p>
+                    <p>
+                        <span class="text-EN">
+                            This may look scary, but don't panic. We can boil it down to this:
+                        </span>
+                        <span hidden class="text-PT">
+                            Tudo isto pode parecer assustador, mas não entres em pânico. Podemos resumir tudo ao seguinte:
+                        </span>
+                    </p>
+                    <div class="example">
+                        <p>
+                            <span class="text-EN">
+                                => <strong><em>n</em></strong> is the length of the array, list, set, etc. that's being searched.
+                                If the array has <strong>20</strong> elements in it, <strong><em>n</em></strong> is <strong>20</strong>.
+                            </span>
+                            <span hidden class="text-PT">
+                                => <strong><em>n</em></strong> é o tamanho da lista sobre a qual conduzimos a busca. Se a lista tem <strong>20</strong> elementos,
+                                <strong><em>n</em></strong> é <strong>20</strong>.
+                            </span>
+                        </p>
+                        <p>
+                            <span class="text-EN">
+                                => <strong><em>log<sub>2</sub></em></strong> means logarithm of base 2. We use base 10 in our everyday lives, but
+                                in this case, since we're dividing a list in two at each step (<strong><u>binary</u></strong> search) until we find what we're looking for,
+                                it makes sense that the base we work with is <em>2</em>.
+                            </span>
+                            <span hidden class="text-PT">
+                                => <strong><em>log<sub>2</sub></em></strong> significa logaritmo de base 2. No nosso dia-a-dia usamos base 10, mas, neste caso, como estamos
+                                a dividir uma lista em dois a cada passo (busca <strong><u>binária</u></strong>) até descobrirmos o elemento que procuramos, faz sentido que
+                                a base usada seja 2.
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                <h3>
+                    <span class="text-EN">
+                        So how do we find <em>log<sub>2</sub>(n)</em>? <u>What even is this</u>?
+                    </span>
+                    <span hidden class="text-PT">
+                        Então como é que descobrimos <em>log<sub>2</sub>(n)</em>? <u>O que é isto, afinal</u>?
+                    </span>
+                </h3>
+                <div class="collapse">
+
+                    <p>
+                        <span class="text-EN">
+                            A logarithm is the opposite of an exponent. The higher <strong>n</strong> is, the less
+                            <strong>log(n)</strong> increases. If it were an exponent, it would increase <em>exponentially</em>.
+                            For example, <strong>2<sup>2</sup> => 4</strong>, but <strong>4<sup>2</sup> => 16</strong>, while
+                            <strong>log<sub>2</sub>(4) => 2</strong> and <strong>log<sub>2</sub>(8) => 3</strong>.
+                            In the first case, the result of the second iteration increased to a factor of four of the exponentiated
+                            number (4=>16), but in the second one, only to 1.5 (2=>3).
+                            Since it's a logarithm, it increases <em>logarithmically</em>.
+                        </span>
+                        <span hidden class="text-PT">
+                            Um logaritmo é o oposto de um expoente. Quanto maior for <strong>n</strong>, mais devagar <strong>log(n)</strong>
+                            aumenta. Se se tratasse de um expoente, este aumentaria <em>exponencialmente</em>. Por exemplo, <strong>2<sup>2</sup> => 4</strong>, mas
+                            <strong>4<sup>2</sup> => 16</strong>, enquanto que <strong>log<sub>2</sub>(4) => 2</strong> e
+                            <strong>log<sub>2</sub>(8) => 3</strong>.
+                            No primeiro caso, o resultado da segunda iteração aumentou quatro vezes (4=>16), mas, no segundo, só 
+                            1,5 (2=>3).
+                            Uma vez que se trata de um logaritmo, aumenta <em>logaritmicamente</em>.
+                        </span>
+                    </p>
+                    <p>
+                        <span class="text-EN">
+                            <em>log<sub>2</sub>(n)</em> is going to be the number of steps it will take us to find what we're looking for.
+                            Think of it as "guessing". The machine can't look at an array and just "see" what it's looking for. It has
+                            to check an element and painstakingly compare it to the one that's being searched, to see if they're the same.
+                            It falls on us to tell it which elements it's going to check, and that's where this binary search algorithm comes
+                            into play.
+                        </span>
+                        <span hidden class="text-PT">
+                            <em>log<sub>2</sub>(n)</em> será o número de passos, ou etapas, que temos pela frente até encontrarmos o que procuramos.
+                            Pensa nisto como "adivinhar". A máquina não consegue olhar para uma lista e "ver" o que procura. Precisa de pegar num
+                            certo elemento e compará-lo meticulosamente com o que está a ser procurado, para ver se são iguais. Cabe-nos a nós dizer-lhe que elementos
+                            é que vai verificar e é aí que este algoritmo de busca binária entra em jogo.
+                        </span>
+                    </p>
+                    <p>
+                        <span class="text-EN">
+                            In order to find <em>log<sub>2</sub>(n)</em>, we just need to find out <em>how many times we need to divide
+                            n to get to 1</em>. We want to go from a list of <em>n</em> elements to just one by cutting it in half
+                            each time.
+                            In other words, <em>to what power do we need to elevate the base (2) in order to reach n</em>?
+                            </em>
+                        </span>
+                        <span hidden class="text-PT">
+                            De modo a encontrarmos <em>log<sub>2</sub>(n)</em>, só precisamos de descobrir <em>quantas vezes precisamos de dividir 
+                            n para chegar a 1</em>. Queremos ir de uma lista de <em>n</em> elementos até apenas um elemento, dividindo-a ao meio
+                            a cada passo.
+                            Noutras palavras, <em>a que potência é que precisamos de elevar a base (2) para alcançarmos n</em>?
+                        </span>
+                    </p>
+                    <p>
+                        <span class="text-EN">
+                            Let's say <strong><em>n = 16</em></strong>. 
+                        </span>
+                        <span hidden class="text-PT">
+                            Digamos que <strong><em>n = 16</em></strong>.
+                        </span>
+                    </p>
+                    <p>
+                        <span class="text-EN">
+                            <em>What must we power our base (of 2) by in order to get n, or 16? Or how many times do we have to
+                            divide <em>n</em> by 2, to get 1?</em> Let's try it:
+                        </span>
+                        <span hidden class="text-PT">
+                            <em>A que potência devemos elevar a nossa base (2) para chegar a n? Ou quantas vezes devemos dividir
+                            <em>n</em> por 2, para obter 1?</em>
+                            Vamos tentar:
+                        </span>
+                    </p>
+                    <div class="example">
+                        <p>
+                            <span class="text-EN">
+                                16 / 2 = 8 | One step
+                            </span>
+                            <span hidden class="text-PT">
+                                16 / 2 = 8 | Um passo
+                            </span>
+                        </p>
+                        <p>
+                            <span class="text-EN">
+                                8 / 2 = 4 | Two steps
+                            </span>
+                            <span hidden class="text-PT">
+                                8 / 2 = 4 | Dois passos
+                            </span>
+                        </p>
+                        <p>
+                            <span class="text-EN">
+                                4 / 2 = 2 | Three steps
+                            </span>
+                            <span hidden class="text-PT">
+                                4 / 2 = 2 | Três passos
+                            </span>
+                        </p>
+                        <p>
+                            <span class="text-EN">
+                                2 / 2 = 1 | Four steps
+                            </span>
+                            <span hidden class="text-PT">
+                                2 / 2 = 1 | Quatro passos
+                            </span>
+                        </p>
+                        <p>
+                            <span class="text-EN">
+                                Therefore, <strong><em>log<sub><span class="yellow-text">2</span></sub>(<span class="green-text">16</span>)</em> = <span class="red-text">4</span></strong>, because <span class="yellow-text">2</span><sup><span class="red-text">4</span></sup> is <span class="green-text">16</span>. It took us four steps to reach <strong>1</strong>.
+                                <strong>1 is the number of elements</strong> we want to reach in our search. We're not searching for 16, or 8, or 4 elements.
+                                We're looking for a particular one.
+                            </span>
+                            <span hidden class="text-PT">
+                                Portanto, <strong><em>log<sub><span class="yellow-text">2</span></sub>(<span class="green-text">16</span>)</em> = <span class="red-text">4</span></strong>, porque <span class="yellow-text">2</span><sup><span class="red-text">4</span></sup> é <span class="green-text">16</span>. Necessitámos de quatro passos para alcançar <strong>1</strong>.
+                                <strong>1 é o número de elementos</strong> que queremos alcançar na nossa busca. Não estamos à procura de 16, ou 8, ou 4 elementos.
+                                Estamos à procura de um em específico.
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                <p>
+                    <span class="text-EN">
+                        So this is how we know a binary search's <u>time complexity</u>. If the division yields a number with decimal places, we just round it.
+                        Now, to see it in action.
+                    </span>
+                    <span hidden class="text-PT">
+                        É assim que sabemos a <u>complexidade de tempo</u> de uma busca binária. Se uma divisão der um resultado com casas decimais, arredondamos.
+                        Agora vamos vê-la em acção.
+                    </span>
+                </p>
+            </article>
+        </section>
+        <section id="demo">
+            <div class="demo-container" id="demo-container">
+                <div id="demo-inputs">
+                    <div id="array-size-div" class="demo-inputs-div">
+                        <h3 class="text-EN">Choose the size of your array</h3>
+                        <h3 hidden class="text-PT">Escolhe o tamanho da lista</h3>
+                        <input class="array-input" type="number" name="array-size" id="array-size" min="1" max="100" placeholder="List size (1-100)">
+                    </div>
+                    <div id="search-target" class="demo-inputs-div">
+                        <h3 class="text-EN">Choose the number to look for</h3>
+                        <h3 hidden class="text-PT">Escolhe o número a encontrar</h3>
+                        <input class="array-input" type="number" name="target-input" id="search-target-input" min="1" max="100" placeholder="Search target (1-100)">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

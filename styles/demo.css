@@ -1,0 +1,95 @@
+#demo-inputs {
+    display: flex;
+    width:100%;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+.demo-inputs-div {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--primary-color);
+    border-radius: 1rem;
+    padding:1rem;
+}
+
+.demo-inputs-div h3{
+    margin:0;
+}
+
+input[type=number] {
+    transform:scale(1.5);
+    width:50%;
+    font-size: .5rem;
+    line-height: 1rem;
+    padding-left:.2rem;
+}
+
+.index, .value {
+    font-size: 1rem;
+    text-align: center;
+    color: var(--font-color-high-opacity-on-secondary);
+    font-weight: bold;
+    width:1.5rem;
+}
+
+.index {
+    border: 1px solid white;
+    padding: .1rem;
+}
+
+.value {
+    border: 1px solid white;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+
+.array {
+    position:relative;
+    display:flex;
+    background-color: var(--secondary-color);
+    width: max-content;
+    border: 3px solid black;
+}
+
+.cell {
+    display:flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.up-arrow {
+    position: absolute;
+    top: 110%;
+}
+
+.array-input {
+    background-color: var(--primary-color-lightest);
+}
+
+#array-size-div {
+    display: flex;
+}
+
+.array-inner-container {
+    padding: 1rem;
+    
+}
+
+.array-inner-container > * {
+    margin: 0 auto;
+}
+
+.array-inner-container > button {
+    margin-top:2rem;
+    margin-left:50%;
+    transform:translateX(-50%);
+}
+
+.step-guide-div {
+    margin-top:2.5rem;
+    background-color: var(--primary-color-lighter);
+    color: var(--font-color-high-opacity-on-primary-lighter);
+    border-radius: 1rem;
+}

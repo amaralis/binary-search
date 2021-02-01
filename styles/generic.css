@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  font-family: var(--ff-secondary);
+}
+
+li {
+  list-style: none;
+}
+
+:root {
+  --primary-color-lightest: hsl(225, 80%, 80%);
+  --primary-color-lighter: hsl(225, 65%, 65%);
+  --primary-color: hsl(225, 50%, 50%);
+  --primary-color-darker: hsl(225, 65%, 35%);
+  --primary-color-darkest: hsl(225, 80%, 20%);
+
+  --secondary-color-lightest: hsl(187, 80%, 80%);
+  --secondary-color-lighter: hsl(187, 65%, 65%);
+  --secondary-color: hsl(187, 50%, 50%);
+  --secondary-color-darker: hsl(187, 65%, 35%);
+  --secondary-color-darkest: hsl(187, 80%, 20%);
+
+  --accent-color-lightest: hsl(40, 80%, 80%);
+  --accent-color-lighter: hsl(40, 65%, 65%);
+  --accent-color: hsl(40, 50%, 50%);
+  --accent-color-darker: hsl(40, 65%, 35%);
+  --accent-color-darkest: hsl(40, 80%, 20%);
+
+  --primary-color-lightest-transparent: hsla(225, 80%, 80%, 0.5);
+  --primary-color-lighter-transparent: hsla(225, 65%, 65%, 0.5);
+  --primary-color-transparent: hsla(225, 50%, 50%, 0.5);
+  --primary-color-darker-transparent: hsla(225, 65%, 35%, 0.5);
+  --primary-color-darkest-transparent: hsla(225, 80%, 20%, 0.5);
+
+  --secondary-color-lightest-transparent: hsla(187, 80%, 80%, 0.5);
+  --secondary-color-lighter-transparent: hsla(187, 65%, 65%, 0.5);
+  --secondary-color-transparent: hsla(187, 50%, 50%, 0.5);
+  --secondary-color-darker-transparent: hsla(187, 65%, 35%, 0.5);
+  --secondary-color-darkest-transparent: hsla(187, 80%, 20%, 0.5);
+
+  --bg-primary-color-filter: hsla(225, 50%, 50%, 0.2);
+  --bg-secondary-color-filter: hsla(187, 50%, 50%, 0.2);
+
+  --ff-main: "Open Sans", "Montserrat", sans-serif;
+  --ff-titles: "Roboto", sans-serif;
+
+  /* Font colors and opacity according to Google Material Design recommendations */
+
+  --font-color-high-opacity-on-primary-lightest: rgba(0, 0, 0, 0.87);
+  --font-color-high-opacity-on-primary-lighter: rgba(0, 0, 0, 0.87);
+  --font-color-high-opacity-on-primary: rgba(255, 255, 255, 0.87);
+  --font-color-high-opacity-on-primary-darker: rgba(255, 255, 255, 0.87);
+  --font-color-high-opacity-on-primary-darkest: rgba(255, 255, 255, 0.87);
+
+  --font-color-medium-opacity-on-primary-lightest: rgba(0, 0, 0, 0.6);
+  --font-color-medium-opacity-on-primary-lighter: rgba(0, 0, 0, 0.6);
+  --font-color-medium-opacity-on-primary: rgba(255, 255, 255, 0.6);
+  --font-color-medium-opacity-on-primary-darker: rgba(255, 255, 255, 0.6);
+  --font-color-medium-opacity-on-primary-darkest: rgba(255, 255, 255, 0.6);
+
+  --font-color-low-opacity-on-primary-lightest: rgba(0, 0, 0, 0.38);
+  --font-color-low-opacity-on-primary-lighter: rgba(0, 0, 0, 0.38);
+  --font-color-low-opacity-on-primary: rgba(255, 255, 255, 0.38);
+  --font-color-low-opacity-on-primary-darker: rgba(255, 255, 255, 0.38);
+  --font-color-low-opacity-on-primary-darkest: rgba(255, 255, 255, 0.38);
+
+  --font-color-high-opacity-on-secondary-lightest: rgba(0, 0, 0, 0.87);
+  --font-color-high-opacity-on-secondary-lighter: rgba(0, 0, 0, 0.87);
+  --font-color-high-opacity-on-secondary: rgba(0, 0, 0, 0.87);
+  --font-color-high-opacity-on-secondary-darker: rgba(255, 255, 255, 0.87);
+  --font-color-high-opacity-on-secondary-darkest: rgba(255, 255, 255, 0.87);
+
+  --font-color-medium-opacity-on-secondary-lightest: rgba(0, 0, 0, 0.6);
+  --font-color-medium-opacity-on-secondary-lighter: rgba(0, 0, 0, 0.6);
+  --font-color-medium-opacity-on-secondary: rgba(0, 0, 0, 0.6);
+  --font-color-medium-opacity-on-secondary-darker: rgba(255, 255, 255, 0.6);
+  --font-color-medium-opacity-on-secondary-darkest: rgba(255, 255, 255, 0.6);
+
+  --font-color-low-opacity-on-secondary-lightest: rgba(0, 0, 0, 0.38);
+  --font-color-low-opacity-on-secondary-lighter: rgba(0, 0, 0, 0.38);
+  --font-color-low-opacity-on-secondary: rgba(0, 0, 0, 0.38);
+  --font-color-low-opacity-on-secondary-darker: rgba(255, 255, 255, 0.38);
+  --font-color-low-opacity-on-secondary-darkest: rgba(255, 255, 255, 0.38);
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.7rem;
+}

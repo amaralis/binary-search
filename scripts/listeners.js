@@ -163,6 +163,11 @@ export const listeners = {
                                 showMidPointText(ptDiv, target, curMidVal, numSteps);                                
                             }
 
+                            if(toggleEnPtBtn.dataset.active === 'true'){
+                                togglePtEnBtn.click();
+                                toggleEnPtBtn.click();
+                            }
+
                             tempSteps++;
                         } else if(tempSteps === 1){
                             // console.log('tempSteps ===================', tempSteps)
@@ -191,6 +196,10 @@ export const listeners = {
                             } else if(target < curMidVal){
                                 const maxArrow = htmlArray.children[htmlArray.children.length-1].children[2].children[0];                                
                                 shiftMaxArrow(maxArrow, htmlArray, (curMidVal - 1));
+                            }
+                            if(toggleEnPtBtn.dataset.active === 'true'){
+                                togglePtEnBtn.click();
+                                toggleEnPtBtn.click();
                             }
                             tempSteps++;
                         } else if(tempSteps === 2){
@@ -230,6 +239,10 @@ export const listeners = {
                                         colorizeTarget(val.children[1], 'rgb(0,255,255)');
                                     }
                                 }
+                            }
+                            if(toggleEnPtBtn.dataset.active === 'true'){
+                                togglePtEnBtn.click();
+                                toggleEnPtBtn.click();
                             }
                             tempSteps++;
                         } else if(tempSteps > 2){
@@ -273,8 +286,11 @@ export const listeners = {
                                 e.target.style.display = 'none';
                             }
 
+                            if(toggleEnPtBtn.dataset.active === 'true'){
+                                togglePtEnBtn.click();
+                                toggleEnPtBtn.click();
+                            }
                             tempSteps = 0;
-                        
                         }
                     }
                 }
@@ -325,11 +341,6 @@ function createResetBtn(){
     btnEnPt.classList.add('reset-btn');
     btnEnPt.id = "reset-btn-en";
     btnEnPt.textContent = 'Reset';
-    if(toggleEnPtBtn.dataset.active === "true"){
-        btnEnPt.hidden = false;
-    } else {
-        btnEnPt.hidden = true;
-    }
     
     let btnPtEn = document.createElement('button');
     btnPtEn.classList.add('text-PT');
@@ -337,11 +348,8 @@ function createResetBtn(){
     btnPtEn.classList.add('reset-btn');
     btnPtEn.id = "reset-btn-pt";
     btnPtEn.textContent = 'Reiniciar';
-    if(togglePtEnBtn.dataset.active === "true"){
-        btnPtEn.hidden = false;
-    } else {
-        btnPtEn.hidden = true;
-    }
+    btnPtEn.hidden = true;
+
     masterContainer.appendChild(btnEnPt);
     masterContainer.appendChild(btnPtEn);
 

@@ -146,14 +146,14 @@ const createArrowDivs = function(greenIndex, redIndex){
     
     greenArrow.classList.add('up-arrow');
     greenArrow.id = 'up-arrow-green-' + numSteps.toString();
-    greenArrow.src = '../images/upArrowGreen.png';
+    greenArrow.src = './images/upArrowGreen.png';
     greenArrow.alt = 'minimum arrow';
     greenArrow.style.width = cellStyles.width;
     greenArrow.style.left = `0px`;
     
     redArrow.classList.add('up-arrow');
     redArrow.id = 'up-arrow-red-' + numSteps.toString();
-    redArrow.src = '../images/upArrowRed.png';
+    redArrow.src = './images/upArrowRed.png';
     redArrow.alt = 'maximum arrow';
     redArrow.style.width = cellStyles.width;
     redArrow.style.right = `0px`;

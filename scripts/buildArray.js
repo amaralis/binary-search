@@ -129,7 +129,7 @@ export function createArrayDiv() {
 
 }
 
-const createArrowDivs = function(greenIndex, redIndex){
+const createArrowDivs = function(){
     const greenArrowDiv = document.createElement('div');
     greenArrowDiv.classList.add('up-arrow-div');
     greenArrowDiv.id = `up-arrow-div-green-${numSteps}`;

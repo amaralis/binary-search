@@ -129,6 +129,10 @@ export const listeners = {
                         if(tempSteps === 0){
                             // console.log('tempSteps ===================', tempSteps)
 
+                            // arrLenInput
+                            document.querySelector('#search-target-input').readOnly = true;
+                            arrLenInput.readOnly = true;
+
                             let newArrayStartIndex = getNumAfterDash(htmlArray.children[0].classList[1])
                             let newArrayEndIndex = newArrayStartIndex + (htmlArray.children.length);
                             
@@ -141,16 +145,23 @@ export const listeners = {
                             const enDiv = e.target.parentNode.children[`step-guide-div-en-${num}`];
                             const ptDiv = e.target.parentNode.children[`step-guide-div-pt-${num}`];
 
+                            console.log(curMidVal)
+                            if(curMidVal === target){
+                                foundTarget = true;
+                            }
+                            
                             if(arrLen === 1 && !foundTarget){
                                 outOfBoundsTarget(enDiv, target, curMidVal, numSteps);
                                 outOfBoundsTarget(ptDiv, target, curMidVal, numSteps);
 
                                 createResetBtn();
+                                document.querySelector('#search-target-input').readOnly = false;
+                                arrLenInput.readOnly = false;
+
                             } else {
                                 showMidPointText(enDiv, target, curMidVal, numSteps);
                                 showMidPointText(ptDiv, target, curMidVal, numSteps);                                
                             }
-
 
                             tempSteps++;
                         } else if(tempSteps === 1){
@@ -170,6 +181,8 @@ export const listeners = {
                                 foundTarget = true;
                                 createResetBtn();
 
+                                document.querySelector('#search-target-input').readOnly = false;
+                                arrLenInput.readOnly = false;
                                 
                             } else if(target > curMidVal){
                                 const minArrow = htmlArray.children[0].children[2].children[0];

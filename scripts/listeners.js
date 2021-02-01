@@ -145,7 +145,7 @@ export const listeners = {
                             const enDiv = e.target.parentNode.children[`step-guide-div-en-${num}`];
                             const ptDiv = e.target.parentNode.children[`step-guide-div-pt-${num}`];
 
-                            console.log(curMidVal)
+                            // console.log(curMidVal)
                             if(curMidVal === target){
                                 foundTarget = true;
                             }

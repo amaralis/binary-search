@@ -107,6 +107,7 @@ h1, h2, h3 {
 
 .text-EN {
     transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
 }
 
 .step-guide-div {

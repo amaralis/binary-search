@@ -321,6 +321,12 @@ function resetArray(e){
     
         createArrayDiv();
         buildArray(arrLen, 0);
+
+        if(toggleEnPtBtn.dataset.active === 'true'){
+            togglePtEnBtn.click();
+            toggleEnPtBtn.click();
+        }
+
         foundTarget = false;
     }
 }

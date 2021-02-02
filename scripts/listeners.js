@@ -24,18 +24,6 @@ let foundTarget = false;
 export const listeners = {
     init: function(){
         toggleEnPtBtn.addEventListener('click', () => {
-            // const enElts = Array.from(document.getElementsByClassName('text-EN'));
-            // const ptElts = Array.from(document.getElementsByClassName('text-PT'));
-            // enElts.forEach(element => {
-            //     element.hidden = true;
-            //     element.style.height = 0;
-            // });
-
-            // ptElts.forEach(element => {
-            //     element.hidden = false;
-            //     element.style.height = 'auto';
-            // });
-
             for(const enElt of document.getElementsByClassName('text-EN')){
                 enElt.hidden = true;
                 enElt.style.height = 0;
@@ -57,19 +45,6 @@ export const listeners = {
         });
 
         togglePtEnBtn.addEventListener('click', () => {
-            // const enElts = Array.from(document.getElementsByClassName('text-EN'));
-            // const ptElts = Array.from(document.getElementsByClassName('text-PT'));
-            
-            // enElts.forEach(element => {
-            //     element.hidden = false;
-            //     element.style.height = 'auto';
-            // });
-
-            // ptElts.forEach(element => {
-            //     element.hidden = true;
-            //     element.style.height = 0;
-            // });
-
             for(const enElt of document.getElementsByClassName('text-EN')){
                 enElt.hidden = false;
                 enElt.style.height = 'auto';
@@ -111,28 +86,6 @@ export const listeners = {
             if(e.target.classList.contains('next-step-btn')){
                 let htmlArray;
 
-                // for(const val of e.target.parentNode.children){
-                //     if(val.classList.contains('array')){
-                //         newLen = parseInt(val.dataset.length);
-                //         htmlArray = val;
-
-
-                //         let newArrayStartIndex = getNumAfterDash(htmlArray.children[0].classList[1])
-                //         let newArrayEndIndex = newArrayStartIndex + (htmlArray.children.length);
-                //         newMidIndex = Math.round(newArrayEndIndex - arrLen/4);
-                        
-                //         arrLen = newArrayEndIndex - newArrayStartIndex;
-                //         curMidVal = newArrayStartIndex + midIndex + 1;
-                //         midIndex = Math.round(newArrayStartIndex + arrLen/2 - 1);
-
-                //         for(const val2 of val.children){
-                //             if(val2.classList.contains(`index-${midIndex}`)){
-                //                 colorizeTarget(val2.children[1], 'rgb(255,255,0)');
-                //             }
-                //         }
-                //     }
-                // }
-
                 for(const val of e.target.parentNode.children){
                     if(val.classList.contains('array')){
                         newLen = parseInt(val.dataset.length);
@@ -141,16 +94,12 @@ export const listeners = {
 
                         let newArrayStartIndex = getNumAfterDash(htmlArray.children[0].classList[1])
                         let newArrayEndIndex = newArrayStartIndex + (htmlArray.children.length);
-                        // let lastIndex = htmlArray.children.length - 1;
-                        // let newArrayEndIndex = getNumAfterDash(htmlArray.children[lastIndex].classList[1]);
                         let nextArrayStartIndex;
                         let nextArrayEndIndex;
                         
                         arrLen = newArrayEndIndex - newArrayStartIndex;
                         curMidVal = newArrayStartIndex + midIndex + 1;
                         midIndex = Math.round(newArrayStartIndex + arrLen/2 - 1);
-                        // newMidIndex = Math.round(newArrayEndIndex - arrLen/4);
-                        // newMidIndex = Math.round(curMidVal + arrLen/4 + 1);
 
                         for(const valChild of val.children){
                             if(valChild.classList.contains(`index-${midIndex}`)){
@@ -165,15 +114,6 @@ export const listeners = {
 
                             targetInput.readOnly = true;
                             arrLenInput.readOnly = true;
-
-                            // let newArrayStartIndex = getNumAfterDash(htmlArray.children[0].classList[1])
-                            // let newArrayEndIndex = newArrayStartIndex + (htmlArray.children.length);
-                            
-                            // arrLen = newArrayEndIndex - newArrayStartIndex;
-                            // midIndex = Math.round(newArrayStartIndex + arrLen/2 - 1);                
-                            // curMidVal = midIndex + 1;
-                            // newMidIndex = Math.round(newArrayEndIndex - arrLen/4);
-
 
                             const enDiv = e.target.parentNode.children[`step-guide-div-en-${num}`];
                             const ptDiv = e.target.parentNode.children[`step-guide-div-pt-${num}`];
@@ -224,15 +164,6 @@ export const listeners = {
                             tempSteps++;
 
                         } else if(tempSteps === 1){
-                            // console.log('tempSteps ===================', tempSteps)
-
-                            // let newArrayStartIndex = getNumAfterDash(htmlArray.children[0].classList[1])
-                            // let newArrayEndIndex = newArrayStartIndex + (htmlArray.children.length);
-                            
-                            // arrLen = newArrayEndIndex - newArrayStartIndex;
-                            // midIndex = Math.round(arrLen/2 - 1);                
-                            // curMidVal = newArrayStartIndex + midIndex + 1;
-
                             if(target > curMidVal){
                                 const minArrow = htmlArray.children[0].children[2].children[0];
                                 shiftMinArrow(minArrow, htmlArray, (curMidVal + 1));
@@ -251,9 +182,6 @@ export const listeners = {
                             // Highlight new middle point
 
                             if(target > curMidVal){
-                                // let newArrayStartIndex = getNumAfterDash(htmlArray.children[0].classList[1])
-                                // let newArrayEndIndex = newArrayStartIndex + (htmlArray.children.length);
-
                                 newMidIndex = Math.round(curMidVal + arrLen/4 - 1);
 
                                 for(const val of htmlArray.children){
@@ -262,8 +190,6 @@ export const listeners = {
                                     }
                                 }
                             } else if(target < curMidVal){
-                                // let newArrayStartIndex = getNumAfterDash(htmlArray.children[0].classList[1])
-                                // let newArrayEndIndex = newArrayStartIndex + (htmlArray.children.length);
                                 newMidIndex = Math.floor(curMidVal - arrLen/4);
 
                                 for(const val of htmlArray.children){
@@ -286,7 +212,6 @@ export const listeners = {
                                 nextArrayEndIndex = getNumAfterDash(htmlArray.children[htmlArray.children.length - 1].classList[1]);
 
                                 arrLen = nextArrayEndIndex - nextArrayStartIndex + 1;
-                                // midIndex = Math.round(nextArrayStartIndex + arrLen/2 - 1);
 
                                 numSteps++;
                                 tempSteps = 0;
@@ -295,8 +220,7 @@ export const listeners = {
                                 buildArray(arrLen, nextArrayStartIndex);
                                 e.target.style.display = 'none';
                                 
-                            } else if(target < curMidVal){                                
-                                // let newArrayStartIndex = getNumAfterDash(htmlArray.children[0].classList[1]);
+                            } else if(target < curMidVal){
                                 nextArrayEndIndex = curMidVal - 2;
 
                                 if(nextArrayEndIndex < 0){
@@ -304,7 +228,6 @@ export const listeners = {
                                 }
 
                                 arrLen = nextArrayEndIndex - newArrayStartIndex + 1;
-                                // midIndex = Math.round(newArrayStartIndex + arrLen/2 - 1);
 
                                 numSteps++;
                                 tempSteps = 0;
@@ -360,7 +283,6 @@ function resetArray(e){
 }
 
 function createResetBtn(){
-    // console.log(document.getElementsByClassName('next-step-btn'));
     let tempArr = [];
     for(const val of document.getElementsByClassName('next-step-btn')){
         // Unintuitive behavior: removing val here only removes one button
@@ -386,10 +308,6 @@ function createResetBtn(){
 
     masterContainer.appendChild(btnEnPt);
     masterContainer.appendChild(btnPtEn);
-
-    // arrLen = 30;
-    // numSteps = 0;
-    // tempSteps = -1;
 
     foundTarget = true;
 

@@ -43,45 +43,21 @@ export const outOfBoundsTarget = function(htmlPara, target, value, numSteps){
 }
 
 export const shiftMinArrow = function(arrowHtmlElt, htmlArray, divValue){
-    // const cellStyles = getComputedStyle(Array.from(document.getElementsByClassName('index'))[0]);
-    // const cellWidth = parseStyleStr(cellStyles.width);
-
     arrowHtmlElt.remove();
-    
-    // console.log(arrowHtmlElt)
     for(const val of htmlArray.children){
         if(val.classList.contains(`value-${divValue}`)){
-            // newCellValue = val;
-            // console.log('val', val)
             val.appendChild(arrowHtmlElt);
-            // console.log(val.children)
             arrowHtmlElt.style.left = "";
-            // console.log(arrowHtmlElt.style)
         }
     }
 }
 
 export const shiftMaxArrow = function(arrowHtmlElt, htmlArray, divValue){
-    // const cellStyles = getComputedStyle(Array.from(document.getElementsByClassName('index'))[0]);
-    // const cellWidth = parseStyleStr(cellStyles.width);
-
-    // console.log(cellWidth)
-
-    // arrowDiv.style.right = `${(numCellsShift)*cellWidth}px`;
     arrowHtmlElt.remove();
-    // const redArrowDiv = document.createElement('div');
-    // redArrowDiv.classList.add('up-arrow-div');
-    // redArrowDiv.id = `up-arrow-div-red-${numSteps}`;
-    // console.log(arrowHtmlElt)
-    // let newCellValue;
     for(const val of htmlArray.children){
         if(val.classList.contains(`value-${divValue}`)){
-            // newCellValue = val;
-            // console.log('val', val)
             val.appendChild(arrowHtmlElt);
-            // console.log(val.children)
             arrowHtmlElt.style.right = "";
-            // console.log(arrowHtmlElt.style)
         }
     }
 }

@@ -1,9 +1,6 @@
 import { target, numSteps, arrLen } from './listeners.js';
 import utils from './utils.js';
 
-        
-// let numSteps = 0;
-
 createArrayDiv();
 
 const buildArray = function(len, start) {
@@ -34,10 +31,6 @@ const buildArray = function(len, start) {
 
     createArrowDivs();
 }
-
-// export function colorizeTarget(htmlElt, color) {
-//     htmlElt.style = `background-color: ${color};`;
-// }
 
 export const getNumAfterDash = function(arrIdStr) {
     let hasSeparator = false;
@@ -143,7 +136,6 @@ const createArrowDivs = function(){
     
     const arr = document.querySelector(`#array-${numSteps}`);
     const cellStyles = getComputedStyle(Array.from(document.getElementsByClassName('index'))[0]);
-    const cellWidth = parseStyleStr(cellStyles.width);
     
     greenArrow.classList.add('up-arrow');
     greenArrow.id = 'up-arrow-green-' + numSteps.toString();
@@ -180,7 +172,6 @@ const createCell = function(index){
 
     const valuePara = cellDiv.appendChild(document.createElement('p'));
     valuePara.classList.add('value');
-    // valuePara.classList.add(`index-${index}`);
 
     const value = document.createTextNode((index + 1).toString());
     valuePara.appendChild(value);

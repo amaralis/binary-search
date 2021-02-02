@@ -1,4 +1,5 @@
 import { target, numSteps, arrLen } from './listeners.js';
+import utils from './utils.js';
 
         
 // let numSteps = 0;
@@ -25,7 +26,7 @@ const buildArray = function(len, start) {
             count++;
             const valArr = Array.from(val.classList);
             if(valArr.includes(`value-${target}`)){
-                colorizeTarget(val.children[1], 'rgb(0,255,0)');
+                utils.colorizeTarget(val.children[1], 'rgb(0,255,0)');
             }
         }
         arr.dataset.length = `${len}`;
@@ -34,9 +35,9 @@ const buildArray = function(len, start) {
     createArrowDivs();
 }
 
-export function colorizeTarget(htmlElt, color) {
-    htmlElt.style = `background-color: ${color};`;
-}
+// export function colorizeTarget(htmlElt, color) {
+//     htmlElt.style = `background-color: ${color};`;
+// }
 
 export const getNumAfterDash = function(arrIdStr) {
     let hasSeparator = false;

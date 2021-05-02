@@ -11,4 +11,6 @@ Use the inputs on the right panel (or scroll down until you find them if your di
 
 On the the other panel, you can find a little explanation of how time complexity works, which is interesting and important knowledge for search and iteration algorithms.
 
-![Demo screenshot](/images/binarySearch1.png | width=100)
+![Demo screenshot](/images/binarySearch1.png)
+
+<img src="https://github.com/amaralis/binary-search/blob/main/images/binarySearch1.png" width="48">

@@ -13,4 +13,4 @@ On the the other panel, you can find a little explanation of how time complexity
 
 ![Demo screenshot](/images/binarySearch1.png)
 
-<img src="https://github.com/amaralis/binary-search/blob/main/images/binarySearch1.png" width="50%" min-width="500">
+<img src="https://github.com/amaralis/binary-search/blob/main/images/binarySearch1.png" max-width="500">
